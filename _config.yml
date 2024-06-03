@@ -1,14 +1,13 @@
 # Setup
 title:        Long LaMP
 tagline:      Personalized Long-Text Generation
-baseurl:      ""
+baseurl:      "/longLaMPbenchmark.github.io"
 paginate:     1
 locale:       "en"
 
 # About/contact
 author:
   name:       Ishita Kumar, Snigdha Vishwanathan, Sushrita Yerra, Alireza Salemi, Ryan A. Rossi
-  url:        "/longLaMPbenchmark.github.io"
 
 # Gems
 gems:
