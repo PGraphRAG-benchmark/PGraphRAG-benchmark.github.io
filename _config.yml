@@ -7,8 +7,8 @@ locale:       "en"
 
 # About/contact
 author:
-  name:       Sushrita Yerra #Ishita Kumar, Snigdha Vishwanathan, Sushrita Yerra, Alireza Salemi, Ryan A. Rossi
-  url:        https://longlamp-benchmark.github.io/longLaMPbenchmark.github.io/ 
+  name:       Ishita Kumar, Snigdha Vishwanathan, Sushrita Yerra, Alireza Salemi, Ryan A. Rossi
+  url:        "/longLaMPbenchmark.github.io"
 
 # Gems
 gems:
