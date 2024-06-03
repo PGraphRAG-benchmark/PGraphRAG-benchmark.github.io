@@ -1,14 +1,14 @@
 # Setup
-title:        LaMP
-tagline:      When Large Language Models Meet Personalization
+title:        Long LaMP
+tagline:      Personalized Long-Text Generation
 baseurl:      ""
 paginate:     1
 locale:       "en"
 
 # About/contact
 author:
-  name:       Alireza Salemi
-  url:        https://alirezasalemi7.github.io/ 
+  name:       Sushrita Yerra #Ishita Kumar, Snigdha Vishwanathan, Sushrita Yerra, Alireza Salemi, Ryan A. Rossi
+  url:        http://yourhomepage.com 
 
 # Gems
 gems:
