@@ -3,7 +3,7 @@
   <h1 class="project-name">{{ site.title }}</h1>
   <h2 class="project-tagline">{{ site.tagline }}</h2>
   <a href="/index.html" class="btn">About</a>
-  <a href="/download" class="btn">Download</a>
+  <a href="{{ '/download' | prepend: site.baseurl }}" class="btn">Download</a>
   <a href="/leaderboard" class="btn">Leaderboard</a>
   <a href="/papers" class="btn">Related Papers</a>
   <a href="/assets/citation.bibtex" class="btn">BibTeX</a>
