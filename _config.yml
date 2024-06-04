@@ -1,7 +1,7 @@
 # Setup
 title:        Long LaMP
 tagline:      Personalized Long-Text Generation
-baseurl:      "/longLaMPbenchmark.github.io"
+baseurl:      ""
 paginate:     1
 locale:       "en"
 

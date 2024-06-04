@@ -5,7 +5,7 @@ permalink: download
 ---
 
 <p>
-    This page provides the link to the datasets. Our benchmark has two settings: 1) user-based separation and 2) time-based separation setting. The details of each set are reported in the paper.  It should be noted that the Avocado (Personalized Email Subject Generation) dataset is not publicly available; however, we provided the code <a href="https://github.com/LaMP-Benchmark/LaMP#avocado">here</a> and sample ids we used to generate the dataset. Follow the instructions to generate the dataset easily when you got acess to <a href="https://catalog.ldc.upenn.edu/LDC2015T03">Avocado dataset</a>.
+    This page contains links to access the datasets. Our benchmark encompasses two settings for each task: 1) User setting, replicating real-world cold start behavior; 2) Temporal setting, aiding the study of LLMs' abilities to capture behaviors over time, another common scenario. Both settings are described in more detail in the paper. The following sections introduce each task and provide dataset links, along with small subsets for previewing. Notably, the Avocado (Personalized Email Subject Generation) dataset isn't publicly available. However, we offer the code and sample IDs used for dataset generation. Follow the instructions to easily generate the dataset upon Avocado dataset access.
 </p>
 
 <p id="email_completion">
@@ -68,7 +68,9 @@ permalink: download
 
 <p id="abstract_generation">
     <h3>Personalized Abstract Generation</h3>
-    <p>This dataset is generated using the Citation Network Dataset(V14). This task comprises of generating an abstract for a given author based on the author's previous research articles capturing the knowledge and stylistic properties. Abstract is generated using the title and the keywords of the article being written about. </p>
+    <p>
+        The benchmark aims to test the model’s ability to distill complex ideas and generate accurate, concise and coherent output over the span of multiple paragraphs on domain specific tasks. The input of the model is the title of the paper along with some keywords to guide the content. The expected output is an abstract conditioned on the title and keywords in user's style. 
+    </p>
     <p>This is a sample of <a href="">input</a> and <a href="">output</a> file of this dataset and the below table contains the complete dataset for the both the settings.</p>
     <table id="download-table">
         <thead>
@@ -126,7 +128,7 @@ permalink: download
 
 <p id="topic_generation">
     <h3>Personalized Topic Generation</h3>
-    <p>This task captures generating content for a topic based on a summary given by the author. The author's previous posts across subreddits are used as the basis for understanding the author's style and knowledge.   </p>
+    <p>This task involves generating the content of Reddit posts based on the provided input, which is a summary of the post. The primary objective is to evaluate the model’s capability in expanding concisely written ideas into detailed discussions while effectively integrating the user’s writing style and specific interests.</p>
     <p>This is a sample of <a href="">input</a> and <a href="">output</a> file of this dataset and the below table contains the complete dataset for the both the settings.</p>
     <table id="download-table">
         <thead>
@@ -184,7 +186,7 @@ permalink: download
     
 <p id="review_generation">
     <h3>Personalized Product Review Generation</h3>
-    <p>This task comprises of generating review for a product based on the user's rating for the product, product description. This dataset is created using the Amazon Reviews dataset</p>
+    <p>Thisbenchmark focuses on generating comprehensive product reviews based on the input comprising the product description, the user’s rating, and a summary of their review. The objective is to evaluate the model’s capability to capture the user’s writing style while producing detailed opinions on the product, incorporating the individual's preferences. The generated review serves as the output, enabling an assessment of the model’s ability to synthesize coherent and personalized text aligning with the provided input and context.</p>
     <p>This is a sample of <a href="">input</a> and <a href="">output</a> file of this dataset and the below table contains the complete dataset for the both the settings.</p>
     <table id="download-table">
         <thead>

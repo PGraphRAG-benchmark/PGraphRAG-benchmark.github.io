@@ -22,32 +22,9 @@ permalink: leaderboard
       <br>
       <tr style="background-color:rgb(206, 200, 213);">
         <th data-type="string" rowspan="1">Name</th>
-        <th data-type="number" onclick="sortTable(1, false)" data-column="1" class="leader-board-header">&#8597;Accuracy</th>
-        <th data-type="number" onclick="sortTable(3, false)" data-column="2" class="leader-board-header">&#8597;Accuracy</th>
-        <th data-type="number" onclick="sortTable(4, false)" data-column="2" class="leader-board-header">&#8597;F1</th>
-        <th data-type="number" onclick="sortTable(6, true)" data-column="3" class="leader-board-header">&#8597;MAE</th>
-        <th data-type="number" onclick="sortTable(7, true)" data-column="3" class="leader-board-header">&#8597;RMSE</th>
-        <th data-type="number" onclick="sortTable(9, false)" data-column="4" class="leader-board-header">&#8597;Rouge-1</th>
-        <th data-type="number" onclick="sortTable(10, false)" data-column="4" class="leader-board-header">&#8597;Rouge-L</th>
-        <th data-type="number" onclick="sortTable(12, false)" data-column="5" class="leader-board-header">&#8597;Rouge-1</th>
-        <th data-type="number" onclick="sortTable(13, false)" data-column="5" class="leader-board-header">&#8597;Rouge-L</th>
-        <th data-type="number" onclick="sortTable(15, false)" data-column="6" class="leader-board-header">&#8597;Rouge-1</th>
-        <th data-type="number" onclick="sortTable(16, false)" data-column="6" class="leader-board-header">&#8597;Rouge-L</th>
-        <th data-type="number" onclick="sortTable(18, false)" data-column="7" class="leader-board-header">&#8597;Rouge-1</th>
-        <th data-type="number" onclick="sortTable(19, false)" data-column="7" class="leader-board-header">&#8597;Rouge-L</th>
-        <th data-type="number" onclick="sortTable(21, false)" data-column="8" class="leader-board-header">&#8597;Accuracy</th>
-        <th data-type="number" onclick="sortTable(23, false)" data-column="9" class="leader-board-header">&#8597;Accuracy</th>
-        <th data-type="number" onclick="sortTable(24, false)" data-column="9" class="leader-board-header">&#8597;F1</th>
-        <th data-type="number" onclick="sortTable(26, true)" data-column="10" class="leader-board-header">&#8597;MAE</th>
-        <th data-type="number" onclick="sortTable(27, true)" data-column="10" class="leader-board-header">&#8597;RMSE</th>
-        <th data-type="number" onclick="sortTable(29, false)" data-column="11" class="leader-board-header">&#8597;Rouge-1</th>
-        <th data-type="number" onclick="sortTable(30, false)" data-column="11" class="leader-board-header">&#8597;Rouge-L</th>
-        <th data-type="number" onclick="sortTable(32, false)" data-column="12" class="leader-board-header">&#8597;Rouge-1</th>
-        <th data-type="number" onclick="sortTable(33, false)" data-column="12" class="leader-board-header">&#8597;Rouge-L</th>
-        <th data-type="number" onclick="sortTable(35, false)" data-column="13" class="leader-board-header">&#8597;Rouge-1</th>
-        <th data-type="number" onclick="sortTable(36, false)" data-column="13" class="leader-board-header">&#8597;Rouge-L</th>
-        <th data-type="number" onclick="sortTable(38, false)" data-column="14" class="leader-board-header">&#8597;Rouge-1</th>
-        <th data-type="number" onclick="sortTable(39, false)" data-column="14" class="leader-board-header">&#8597;Rouge-L</th>
+        <th data-type="number" onclick="sortTable(1, false)" class="leader-board-header">&#8597;Rouge-1</th>
+        <th data-type="number" onclick="sortTable(3, false)" class="leader-board-header">&#8597;Rouge-L</th>
+        <th data-type="number" onclick="sortTable(4, false)" class="leader-board-header">&#8597;METEOR</th>
       </tr>
     </thead>
     <tbody>
@@ -55,131 +32,49 @@ permalink: leaderboard
         <tr id="{{player.id}}" class="table-methods">
           {% if player.task1_name != null %}
           <td data-column="1"><a href="{{ player.link }}">{{ player.task1_name }}</a></td>
-          <td data-column="1">{{ player.task1_score_acc }}</td>
+          <td data-column="1">{{ player.rouge_1_score }}</td>
+          <td data-column="1">{{ player.rouge_l_score }}</td>
+          <td data-column="1">{{ player.meteor_score }}</td>
           {% else %}
           <td data-column="1" ></td>
+          <td data-column="1" >0</td>
+          <td data-column="1" >0</td>
           <td data-column="1" >0</td>
           {% endif %}
           {% if player.task2_name != null %}
           <td data-column="2"><a href="{{ player.link }}">{{ player.task2_name }}</a></td>
-          <td data-column="2">{{ player.task2_score_acc }}</td>
-          <td data-column="2">{{ player.task2_score_f1 }}</td>
+          <td data-column="2">{{ player.rouge_1_score }}</td>
+          <td data-column="2">{{ player.rouge_l_score }}</td>
+          <td data-column="2">{{ player.meteor_score }}</td>
           {% else %}
           <td data-column="2" ></td>
+          <td data-column="2" >0</td>
           <td data-column="2" >0</td>
           <td data-column="2" >0</td>
           {% endif %}
           {% if player.task3_name != null %}
           <td data-column="3"><a href="{{ player.link }}">{{ player.task3_name }}</a></td>
-          <td data-column="3">{{ player.task3_score_mae }}</td>
-          <td data-column="3">{{ player.task3_score_rmse }}</td>
+          <td data-column="3">{{ player.rouge_1_score }}</td>
+          <td data-column="3">{{ player.rouge_l_score }}</td>
+          <td data-column="3">{{ player.meteor_score }}</td>
           
           {% else %}
           <td data-column="3" ></td>
-          <td data-column="3" >10000</td>
-          <td data-column="3" >10000</td>
+          <td data-column="3" >0</td>
+          <td data-column="3" >0</td>
+          <td data-column="3" >0</td>
           
           {% endif %}
           {% if player.task4_name != null %}
           <td data-column="4"><a href="{{ player.link }}">{{ player.task4_name }}</a></td>
-          <td data-column="4">{{ player.task4_score_r1 }}</td>
-          <td data-column="4">{{ player.task4_score_rl }}</td>
+          <td data-column="4">{{ player.rouge_1_score }}</td>
+          <td data-column="4">{{ player.rouge_l_score }}</td>
+          <td data-column="4">{{ player.meteor_score }}</td>
           {% else %}
           <td data-column="4" ></td>
           <td data-column="4" >0</td>
           <td data-column="4" >0</td>
-          
-          {% endif %}
-          {% if player.task5_name != null %}
-          <td data-column="5"><a href="{{ player.link }}">{{ player.task5_name }}</a></td>
-          <td data-column="5">{{ player.task5_score_r1 }}</td>
-          <td data-column="5">{{ player.task5_score_rl }}</td>
-          {% else %}
-          <td data-column="5" ></td>
-          <td data-column="5" >0</td>
-          <td data-column="5" >0</td>
-          
-          {% endif %}
-          {% if player.task6_name != null %}
-          <td data-column="6"><a href="{{ player.link }}">{{ player.task6_name }}</a></td>
-          <td data-column="6">{{ player.task6_score_r1 }}</td>
-          <td data-column="6">{{ player.task6_score_rl }}</td>
-          {% else %}
-          <td data-column="6" ></td>
-          <td data-column="6" >0</td>
-          <td data-column="6" >0</td>
-          
-          {% endif %}
-          {% if player.task7_name != null %}
-          <td data-column="7"><a href="{{ player.link }}">{{ player.task7_name }}</a></td>
-          <td data-column="7">{{ player.task7_score_r1 }}</td>
-          <td data-column="7">{{ player.task7_score_rl }}</td>
-          {% else %}
-          <td data-column="7" ></td>
-          <td data-column="7" >0</td>
-          <td data-column="7" >0</td>
-          
-          {% endif %}
-          {% if player.task1_name_t != null %}
-          <td data-column="8"><a href="{{ player.link }}">{{ player.task1_name_t }}</a></td>
-          <td data-column="8">{{ player.task1_score_acc_t }}</td>
-          {% else %}
-          <td data-column="8" ></td>
-          <td data-column="8" >0</td>
-          {% endif %}
-          {% if player.task2_name_t != null %}
-          <td data-column="9"><a href="{{ player.link }}">{{ player.task2_name_t }}</a></td>
-          <td data-column="9">{{ player.task2_score_acc_t }}</td>
-          <td data-column="9">{{ player.task2_score_f1_t }}</td>
-          {% else %}
-          <td data-column="9" ></td>
-          <td data-column="9" >0</td>
-          <td data-column="9" >0</td>
-          {% endif %}
-          {% if player.task3_name_t != null %}
-          <td data-column="10"><a href="{{ player.link }}">{{ player.task3_name_t }}</a></td>
-          <td data-column="10">{{ player.task3_score_mae_t }}</td>
-          <td data-column="10">{{ player.task3_score_rmse_t }}</td>
-          {% else %}
-          <td data-column="10" ></td>
-          <td data-column="10" >10000</td>
-          <td data-column="10" >10000</td>
-          {% endif %}
-          {% if player.task4_name_t != null %}
-          <td data-column="11"><a href="{{ player.link }}">{{ player.task4_name_t }}</a></td>
-          <td data-column="11">{{ player.task4_score_r1_t }}</td>
-          <td data-column="11">{{ player.task4_score_rl_t }}</td>
-          {% else %}
-          <td data-column="11" ></td>
-          <td data-column="11" >0</td>
-          <td data-column="11" >0</td>
-          {% endif %}
-          {% if player.task5_name_t != null %}
-          <td data-column="12"><a href="{{ player.link }}">{{ player.task5_name_t }}</a></td>
-          <td data-column="12">{{ player.task5_score_r1_t }}</td>
-          <td data-column="12">{{ player.task5_score_rl_t }}</td>
-          {% else %}
-          <td data-column="12" ></td>
-          <td data-column="12" >0</td>
-          <td data-column="12" >0</td>
-          {% endif %}
-          {% if player.task6_name_t != null %}
-          <td data-column="13"><a href="{{ player.link }}">{{ player.task6_name_t }}</a></td>
-          <td data-column="13">{{ player.task6_score_r1_t }}</td>
-          <td data-column="13">{{ player.task6_score_rl_t }}</td>
-          {% else %}
-          <td data-column="13" ></td>
-          <td data-column="13" >0</td>
-          <td data-column="13" >0</td>
-          {% endif %}
-          {% if player.task7_name_t != null %}
-          <td data-column="14"><a href="{{ player.link }}">{{ player.task7_name_t }}</a></td>
-          <td data-column="14">{{ player.task7_score_r1_t }}</td>
-          <td data-column="14">{{ player.task7_score_rl_t }}</td>
-          {% else %}
-          <td data-column="14" ></td>
-          <td data-column="14" >0</td>
-          <td data-column="14" >0</td>
+          <td data-column="4" >0</td>
           {% endif %}
         </tr>
       {% endfor %}
@@ -238,27 +133,7 @@ permalink: leaderboard
         sortTable(6, true)
       } else if (selectedColumn == "4"){ 
         sortTable(9, false)
-      } else if (selectedColumn == "5"){
-        sortTable(12, false)
-      } else if (selectedColumn == "6"){
-        sortTable(15, false)
-      } else if (selectedColumn == "7"){
-        sortTable(18, false)
-      } else if (selectedColumn == "8"){
-        sortTable(21, false)
-      } else if (selectedColumn == "9"){
-        sortTable(23, false)
-      } else if (selectedColumn == "10"){
-        sortTable(26, true)
-      } else if (selectedColumn == "11"){ 
-        sortTable(29, false)
-      } else if (selectedColumn == "12"){
-        sortTable(32, false)
-      } else if (selectedColumn == "13"){
-        sortTable(35, false)
-      } else if (selectedColumn == "14"){
-        sortTable(38, false)
-      } 
+      }
 
       allCellsth.forEach((cell) => {
         if (cell.getAttribute("data-column") === selectedColumn) {
