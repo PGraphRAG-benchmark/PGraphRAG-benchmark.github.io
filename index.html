@@ -10,9 +10,4 @@ title: {{ site.name }}
     <p>LongLaMP aims to fill this gap by providing a benchmark specifically designed to assess the effectiveness of LLMs in generating personalized, long-text outputs. It is a collection of datasets spanning diverse domains, each focused on the challenging task of long-text generation.
     </p>
   </div>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
 </div>
