@@ -9,10 +9,6 @@ title: {{ site.name }}
     <p>Large language models (LLMs) have demonstrated remarkable capabilities in text generation tasks, but their performance in personalized long-text generation remains largely unexplored. While recent works have focused on personalization for short-text generation, there is a need for a comprehensive evaluation framework tailored to long-text generation, considering its widespread real-world applications.</p>
     <p>LongLaMP aims to fill this gap by providing a benchmark specifically designed to assess the effectiveness of LLMs in generating personalized, long-text outputs. It is a collection of datasets spanning diverse domains, each focused on the challenging task of long-text generation.
     </p>
+    <p>If you use the LongLaMP benchmark in your work, please cite: <a href="https://www.arxiv.org/abs/2407.11016">LongLaMP: Personalized Long-text Generation</a>. Thanks!</p>
   </div>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
 </div>
