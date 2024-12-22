@@ -6,8 +6,9 @@ paginate:     1
 locale:       "en"
 
 # About/contact
-author: Steven Au
-  name:     
+author: 
+  name: Steven Au
+  url:  https://github.com/Prowo
 
 # Gems
 gems:
