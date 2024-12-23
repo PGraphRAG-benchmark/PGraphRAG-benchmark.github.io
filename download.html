@@ -5,239 +5,127 @@ permalink: download
 ---
 
 <p>
-    This page contains links to access the datasets. Our benchmark encompasses two settings for each task: 1) User setting, replicating real-world cold start behavior; 2) Temporal setting, aiding the study of LLMs' abilities to capture behaviors over time, another common scenario. Both settings are described in more detail in the paper. The following sections introduce each task and provide dataset links, along with small subsets for previewing. Notably, the Avocado (Personalized Email Subject Generation) dataset isn't publicly available. However, we offer the code and sample IDs used for dataset generation. Follow the instructions to easily generate the dataset upon Avocado dataset access.
+    Downloads are made accessible through the GitHub repository. We grouped the files by the dataset in which the task was performed, so information for User-Product Review Tasks is in the same file. This way, there are only 12 files to download all splits. To create your own splits from the original data, refer to the README in the repository.
+</p>
+<p>
+    For the sake of accessibility, direct download links are provided below.
 </p>
 
-<p id="email_completion">
-<h3>Personalized Email Completion</h3>
-<p>This dataset is created using the private email collection dataset: Avocado Research Email Collection. The objective of this task is to complete the email for a given user, given an email subject, part of the email and user's previous email-subject pairs. For more information on this, refer to the longLAMP paper.  </p>
-<p>This is a sample of <a href="">input</a> and <a href="">output</a> file of this dataset and the below table contains the complete dataset for the both the settings.</p>
+<p>
+<h3>User-Product Review Dataset</h3>
+<p>
+    For Tasks 1, 5, and 9. This dataset is created using the Amazon Reviews dataset for All Beauty Category.
+
 <table id="download-table">
     <thead>
         <tr>
-            <th rowspan="2">Setting</th>
-            <th colspan="2">Train</th>
-            <th colspan="2">Validation</th>
-            <th colspan="1">Test</th>
+            <th>Split</th>
+            <th>Download</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <th>
-                <p>User Setting</p> 
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a>
-            </th>
+            <td>Train</td>
+            <td><a href="https://github.com/PGraphRAG-benchmark/PGR-LLM/raw/refs/heads/main/data_splits/amazon_train.json" download>Download</a></td>
         </tr>
         <tr>
-            <th>
-                <p>Temporal Setting</p> 
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a> / <a href="" download>Output</a>
-            </th>
-            <th>
-                <a href="" download>Input</a>
-            </th>
+            <td>Validation</td>
+            <td><a href="https://github.com/PGraphRAG-benchmark/PGR-LLM/raw/refs/heads/main/data_splits/amazon_dev.json" download>Download</a></td>
+        </tr>
+        <tr>
+            <td>Test</td>
+            <td><a href="https://github.com/PGraphRAG-benchmark/PGR-LLM/raw/refs/heads/main/data_splits/amazon_test.json" download>Download</a></td>
         </tr>
     </tbody>
 </table>
 </p>
 
 <p id="abstract_generation">
-    <h3>Personalized Abstract Generation</h3>
-    <p>
-        The benchmark aims to test the model’s ability to distill complex ideas and generate accurate, concise and coherent output over the span of multiple paragraphs on domain specific tasks. The input of the model is the title of the paper along with some keywords to guide the content. The expected output is an abstract conditioned on the title and keywords in user's style. 
-    </p>
-    <p>This is a sample of <a href="">input</a> and <a href="">output</a> file of this dataset and the below table contains the complete dataset for the both the settings.</p>
-    <table id="download-table">
-        <thead>
-            <tr>
-                <th rowspan="2">Setting</th>
-                <th colspan="2">Train</th>
-                <th colspan="2">Validation</th>
-                <th colspan="1">Test</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>
-                    <p>User Setting</p> 
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <p>Temporal Setting</p> 
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a>
-                </th>
-            </tr>
-        </tbody>
-    </table>
+<h3>Hotel Experience Dataset</h3>
+<p>
+    For Task 2, 6, and 10. This dataset is created using the Hotel Reviews dataset from Kaggle.
+</p>
+
+<table id="download-table">
+    <thead>
+        <tr>
+            <th>Split</th>
+            <th>Download</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Train</td>
+            <td><a href="https://github.com/PGraphRAG-benchmark/PGR-LLM/raw/refs/heads/main/data_splits/hotel_train.json" download>Download</a></td>
+        </tr>
+        <tr>
+            <td>Validation</td>
+            <td><a href="https://github.com/PGraphRAG-benchmark/PGR-LLM/raw/refs/heads/main/data_splits/hotel_dev.json" download>Download</a></td>
+        </tr>
+        <tr>
+            <td>Test</td>
+            <td><a href="https://github.com/PGraphRAG-benchmark/PGR-LLM/raw/refs/heads/main/data_splits/hoteltest.json" download>Download</a></td>
+        </tr>
+    </tbody>
+</table>
 </p>
 
 <p id="topic_generation">
-    <h3>Personalized Topic Generation</h3>
-    <p>This task involves generating the content of Reddit posts based on the provided input, which is a summary of the post. The primary objective is to evaluate the model’s capability in expanding concisely written ideas into detailed discussions while effectively integrating the user’s writing style and specific interests.</p>
-    <p>This is a sample of <a href="">input</a> and <a href="">output</a> file of this dataset and the below table contains the complete dataset for the both the settings.</p>
-    <table id="download-table">
-        <thead>
-            <tr>
-                <th rowspan="2">Setting</th>
-                <th colspan="2">Train</th>
-                <th colspan="2">Validation</th>
-                <th colspan="1">Test</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>
-                    <p>User Setting</p> 
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <p>Temporal Setting</p> 
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a>
-                </th>
-            </tr>
-        </tbody>
-    </table>
+<h3>Stylized Feedback Review Dataset</h3>
+<p>
+    For Task 3, 7, and 11. This dataset is created using the Grammar and Online Product Reviews dataset from Kaggle.
 </p>
-    
+
+<table id="download-table">
+    <thead>
+        <tr>
+            <th>Split</th>
+            <th>Download</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Train</td>
+            <td><a href="https://github.com/PGraphRAG-benchmark/PGR-LLM/raw/refs/heads/main/data_splits/gap_train.json" download>Download</a></td>
+        </tr>
+        <tr>
+            <td>Validation</td>
+            <td><a href="https://github.com/PGraphRAG-benchmark/PGR-LLM/raw/refs/heads/main/data_splits/gap_dev.json" download>Download</a></td>
+        </tr>
+        <tr>
+            <td>Test</td>
+            <td><a href="https://github.com/PGraphRAG-benchmark/PGR-LLM/raw/refs/heads/main/data_splits/gap_test.json" download>Download</a></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+
 <p id="review_generation">
-    <h3>Personalized Product Review Generation</h3>
-    <p>Thisbenchmark focuses on generating comprehensive product reviews based on the input comprising the product description, the user’s rating, and a summary of their review. The objective is to evaluate the model’s capability to capture the user’s writing style while producing detailed opinions on the product, incorporating the individual's preferences. The generated review serves as the output, enabling an assessment of the model’s ability to synthesize coherent and personalized text aligning with the provided input and context.</p>
-    <p>This is a sample of <a href="">input</a> and <a href="">output</a> file of this dataset and the below table contains the complete dataset for the both the settings.</p>
-    <table id="download-table">
-        <thead>
-            <tr>
-                <th rowspan="2">Setting</th>
-                <th colspan="2">Train</th>
-                <th colspan="2">Validation</th>
-                <th colspan="1">Test</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>
-                    <p>User Setting</p> 
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <p>Temporal Setting</p> 
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a> / <a href="" download>Output</a>
-                </th>
-                <th>
-                    <a href="" download>Input</a>
-                </th>
-            </tr>
-        </tbody>
-    </table>
+<h3>Multi-lingual Product Review Dataset</h3>
+<p>
+    For Task 4, 8, and 12. This dataset is created using the B2W-Reviews dataset from github.
+</p>
+
+<table id="download-table">
+    <thead>
+        <tr>
+            <th>Split</th>
+            <th>Download</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Train</td>
+            <td><a href="https://github.com/PGraphRAG-benchmark/PGR-LLM/raw/refs/heads/main/data_splits/b2w_train.json" download>Download</a></td>
+        </tr>
+        <tr>
+            <td>Validation</td>
+            <td><a href="https://github.com/PGraphRAG-benchmark/PGR-LLM/raw/refs/heads/main/data_splits/b2w_dev.json" download>Download</a></td>
+        </tr>
+        <tr>
+            <td>Test</td>
+            <td><a href="https://github.com/PGraphRAG-benchmark/PGR-LLM/raw/refs/heads/main/data_splits/b2w_test.json" download>Download</a></td>
+        </tr>
+    </tbody>
+</table>
 </p>
