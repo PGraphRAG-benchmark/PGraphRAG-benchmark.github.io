@@ -5,7 +5,7 @@ permalink: leaderboard
 ---
 
 <p>
-    Welcome to the PGraphRAG benchmark leaderboard! To assess your results on the test set or submit your model for inclusion on the leaderboard, please fill <a href="https://forms.gle/i5M7SFFEyPQ2ySLG9">this</a> form.
+    Welcome to the LaMP benchmark leaderboard! To assess your results on the test set or submit your model for inclusion on the leaderboard, please fill <a href="https://forms.gle/i5M7SFFEyPQ2ySLG9">this</a> form.
 </p>
 <div style="align-items: center">
 <table id="leaderboard-table" style="display: inline-table;">
@@ -29,25 +29,31 @@ permalink: leaderboard
       </div>
       <br>
       <tr style="background-color:rgb(206, 200, 213);">
-        <th data-type="string" rowspan="1">Name</th>
-        <th data-type="number" onclick="sortTable(1, false)" class="leader-board-header" data-column="rouge">&#8597;Rouge-1</th>
-        <th data-type="number" onclick="sortTable(3, false)" class="leader-board-header" data-column="rouge">&#8597;Rouge-L</th>
-        <th data-type="number" onclick="sortTable(4, false)" class="leader-board-header" data-column="rouge">&#8597;METEOR</th>
-        <th data-type="number" onclick="sortTable(5, false)" class="leader-board-header" data-column="mae" style="display:none;">&#8597;MAE</th>
-        <th data-type="number" onclick="sortTable(6, false)" class="leader-board-header" data-column="mae" style="display:none;">&#8597;RMSE</th>
+        <th rowspan="1">Name</th>
+        <th data-column="rouge">Rouge-1</th>
+        <th data-column="rouge">Rouge-L</th>
+        <th data-column="rouge">METEOR</th>
+        <th data-column="mae" style="display:none;">MAE</th>
+        <th data-column="mae" style="display:none;">RMSE</th>
       </tr>
     </thead>
     <tbody>
-      {% for player in site.data.leaderboard %}
-        <tr id="{{player.id}}" class="table-methods">
-          <td><a href="{{ player.link }}">{{ player.name }}</a></td>
-          <td data-column="rouge">{{ player.rouge_1_score }}</td>
-          <td data-column="rouge">{{ player.rouge_l_score }}</td>
-          <td data-column="rouge">{{ player.meteor_score }}</td>
-          <td data-column="mae" style="display:none;">{{ player.mae }}</td>
-          <td data-column="mae" style="display:none;">{{ player.rmse }}</td>
-        </tr>
-      {% endfor %}
+      <tr>
+        <td>GPT</td>
+        <td data-column="rouge">0.189</td>
+        <td data-column="rouge">0.130</td>
+        <td data-column="rouge">0.196</td>
+        <td data-column="mae" style="display:none;">0.3448</td>
+        <td data-column="mae" style="display:none;">0.7065</td>
+      </tr>
+      <tr>
+        <td>LLaMA</td>
+        <td data-column="rouge">0.178</td>
+        <td data-column="rouge">0.129</td>
+        <td data-column="rouge">0.154</td>
+        <td data-column="mae" style="display:none;">0.3132</td>
+        <td data-column="mae" style="display:none;">0.7230</td>
+      </tr>
     </tbody>
 </table>
 </div>
