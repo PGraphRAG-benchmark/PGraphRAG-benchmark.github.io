@@ -5,8 +5,7 @@ permalink: leaderboard
 ---
 
 <p>
-    Welcome to the LaMP benchmark leaderboard! To assess your results on the test set or submit your model for inclusion on the leaderboard, please fill <a href="https://forms.gle/i5M7SFFEyPQ2ySLG9">this</a> form.
-</p>
+    Welcome to the PGraphRAG benchmark leaderboard! To assess your results on the test set or submit your model for inclusion on the leaderboard, please fill <a href="">this</a> form (COMING SOON).</p>
 <div style="align-items: center">
 <table id="leaderboard-table" style="display: inline-table;">
     <thead>
@@ -52,28 +51,28 @@ permalink: leaderboard
         { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
       ],
       3: [
-        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
-        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+        { name: "GPT", rouge1: "0.245", rougeL: "0.145", meteor: "0.200", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.230", rougeL: "0.140", meteor: "0.180", mae: "-", rmse: "-" }
       ],
       4: [
-        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
-        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+        { name: "GPT", rouge1: "0.210", rougeL: "0.135", meteor: "0.175", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.200", rougeL: "0.130", meteor: "0.170", mae: "-", rmse: "-" }
       ],
       5: [
-        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
-        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+        { name: "GPT", rouge1: "0.220", rougeL: "0.140", meteor: "0.190", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.215", rougeL: "0.138", meteor: "0.185", mae: "-", rmse: "-" }
       ],
       6: [
-        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
-        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+        { name: "GPT", rouge1: "0.230", rougeL: "0.150", meteor: "0.195", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.225", rougeL: "0.148", meteor: "0.190", mae: "-", rmse: "-" }
       ],
       7: [
-        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
-        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+        { name: "GPT", rouge1: "0.200", rougeL: "0.130", meteor: "0.170", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.195", rougeL: "0.128", meteor: "0.165", mae: "-", rmse: "-" }
       ],
       8: [
-        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
-        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+        { name: "GPT", rouge1: "0.215", rougeL: "0.145", meteor: "0.180", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.210", rougeL: "0.142", meteor: "0.175", mae: "-", rmse: "-" }
       ],
       9: [
         { name: "GPT", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3448", rmse: "0.7065" },
@@ -84,15 +83,15 @@ permalink: leaderboard
         { name: "LLaMA", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3340", rmse: "0.6372" }
       ],
       11: [
-        { name: "GPT", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3448", rmse: "0.7065" },
-        { name: "LLaMA", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3132", rmse: "0.7230" }
+        { name: "GPT", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3400", rmse: "0.7150" },
+        { name: "LLaMA", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3200", rmse: "0.7300" }
       ],
       12: [
-        { name: "GPT", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3448", rmse: "0.7065" },
-        { name: "LLaMA", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3132", rmse: "0.7230" }
-      ],
+        { name: "GPT", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3500", rmse: "0.7250" },
+        { name: "LLaMA", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3300", rmse: "0.7400" }
+      ]
     };
-
+    
     function changeColumn() {
       const selectedTask = document.getElementById("column-select").value;
       const tbody = document.querySelector("#leaderboard-table tbody");
