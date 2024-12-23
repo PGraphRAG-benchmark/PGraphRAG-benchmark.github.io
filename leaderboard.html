@@ -29,7 +29,7 @@ permalink: leaderboard
       </div>
       <br>
       <tr style="background-color:rgb(206, 200, 213);">
-        <th rowspan="1">Name</th>
+        <th>Name</th>
         <th data-column="rouge">Rouge-1</th>
         <th data-column="rouge">Rouge-L</th>
         <th data-column="rouge">METEOR</th>
@@ -38,43 +38,82 @@ permalink: leaderboard
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>GPT</td>
-        <td data-column="rouge">0.189</td>
-        <td data-column="rouge">0.130</td>
-        <td data-column="rouge">0.196</td>
-        <td data-column="mae" style="display:none;">0.3448</td>
-        <td data-column="mae" style="display:none;">0.7065</td>
-      </tr>
-      <tr>
-        <td>LLaMA</td>
-        <td data-column="rouge">0.178</td>
-        <td data-column="rouge">0.129</td>
-        <td data-column="rouge">0.154</td>
-        <td data-column="mae" style="display:none;">0.3132</td>
-        <td data-column="mae" style="display:none;">0.7230</td>
-      </tr>
     </tbody>
 </table>
 </div>
 <script>
-    function sortTable(columnIndex, dec) {
-      const table = document.getElementById("leaderboard-table");
-      const tbody = table.tBodies[0];
-      const rows = Array.from(tbody.rows);
-  
-      const compareFunction = (rowA, rowB) => {
-        const cellA = rowA.cells[columnIndex].innerText;
-        const cellB = rowB.cells[columnIndex].innerText;
-        return !dec ? parseFloat(cellA) - parseFloat(cellB) : parseFloat(cellB) - parseFloat(cellA);
-      };
-  
-      const sorted = rows.sort(compareFunction);
-      sorted.forEach(row => tbody.appendChild(row));
-    }
+    const leaderboardData = {
+      1: [
+        { name: "GPT", rouge1: "0.189", rougeL: "0.130", meteor: "0.196", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.178", rougeL: "0.129", meteor: "0.154", mae: "-", rmse: "-" }
+      ],
+      2: [
+        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+      ],
+      3: [
+        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+      ],
+      4: [
+        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+      ],
+      5: [
+        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+      ],
+      6: [
+        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+      ],
+      7: [
+        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+      ],
+      8: [
+        { name: "GPT", rouge1: "0.263", rougeL: "0.152", meteor: "0.206", mae: "-", rmse: "-" },
+        { name: "LLaMA", rouge1: "0.263", rougeL: "0.157", meteor: "0.191", mae: "-", rmse: "-" }
+      ],
+      9: [
+        { name: "GPT", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3448", rmse: "0.7065" },
+        { name: "LLaMA", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3132", rmse: "0.7230" }
+      ],
+      10: [
+        { name: "GPT", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3284", rmse: "0.6083" },
+        { name: "LLaMA", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3340", rmse: "0.6372" }
+      ],
+      11: [
+        { name: "GPT", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3448", rmse: "0.7065" },
+        { name: "LLaMA", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3132", rmse: "0.7230" }
+      ],
+      12: [
+        { name: "GPT", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3448", rmse: "0.7065" },
+        { name: "LLaMA", rouge1: "-", rougeL: "-", meteor: "-", mae: "0.3132", rmse: "0.7230" }
+      ],
+    };
 
     function changeColumn() {
       const selectedTask = document.getElementById("column-select").value;
+      const tbody = document.querySelector("#leaderboard-table tbody");
+
+      // Clear existing rows
+      tbody.innerHTML = "";
+
+      // Populate table with the selected task data
+      leaderboardData[selectedTask].forEach(row => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${row.name}</td>
+          <td data-column="rouge">${row.rouge1}</td>
+          <td data-column="rouge">${row.rougeL}</td>
+          <td data-column="rouge">${row.meteor}</td>
+          <td data-column="mae" style="display:none;">${row.mae}</td>
+          <td data-column="mae" style="display:none;">${row.rmse}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
       const rougeMetrics = document.querySelectorAll("[data-column='rouge']");
       const maeMetrics = document.querySelectorAll("[data-column='mae']");
 
@@ -85,17 +124,8 @@ permalink: leaderboard
         maeMetrics.forEach(cell => cell.style.display = "none");
         rougeMetrics.forEach(cell => cell.style.display = "table-cell");
       }
-
-      sortTable(1, false);
     }
 
-    sortTable(1, false);
+    // Initialize with task 1 data
+    changeColumn();
 </script>
-<style>
-    td[data-column] {
-      display: table-cell;
-    }
-    th[data-column] {
-      display: table-cell;
-    }
-</style>
