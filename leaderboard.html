@@ -13,69 +13,39 @@ permalink: leaderboard
       <div>
         <label for="column-select">Task:</label>
         <select id="column-select" onchange="changeColumn()">
-          <option value="1" selected>Personalized Email Completion</option>
-          <option value="2">Personalized Abstract Generation</option>
-          <option value="2">Personalized Topic Generation</option>
-          <option value="2">Personalized Product Review Generation</option>
+          <option value="1" selected>User Product Review Generation</option>
+          <option value="2">Hotel Experience Generation</option>
+          <option value="3">Stylized Feedback Generation</option>
+          <option value="4">Multi-lingual Review Generation</option>
+          <option value="5">User Product Review Title Generation</option>
+          <option value="6">Hotel Experience Summary Generation</option>
+          <option value="7">Stylized Feedback Title Generation</option>
+          <option value="8">Multi-lingual Review Title Generation</option>
+          <option value="9">User Product Review Ratings</option>
+          <option value="10">Hotel Experience Ratings</option>
+          <option value="11">Stylized Feedback Ratings</option>
+          <option value="12">Multi-lingual Product Ratings</option>
         </select>
       </div>
       <br>
       <tr style="background-color:rgb(206, 200, 213);">
         <th data-type="string" rowspan="1">Name</th>
-        <th data-type="number" onclick="sortTable(1, false)" class="leader-board-header">&#8597;Rouge-1</th>
-        <th data-type="number" onclick="sortTable(3, false)" class="leader-board-header">&#8597;Rouge-L</th>
-        <th data-type="number" onclick="sortTable(4, false)" class="leader-board-header">&#8597;METEOR</th>
+        <th data-type="number" onclick="sortTable(1, false)" class="leader-board-header" data-column="rouge">&#8597;Rouge-1</th>
+        <th data-type="number" onclick="sortTable(3, false)" class="leader-board-header" data-column="rouge">&#8597;Rouge-L</th>
+        <th data-type="number" onclick="sortTable(4, false)" class="leader-board-header" data-column="rouge">&#8597;METEOR</th>
+        <th data-type="number" onclick="sortTable(5, false)" class="leader-board-header" data-column="mae" style="display:none;">&#8597;MAE</th>
+        <th data-type="number" onclick="sortTable(6, false)" class="leader-board-header" data-column="mae" style="display:none;">&#8597;RMSE</th>
       </tr>
     </thead>
     <tbody>
       {% for player in site.data.leaderboard %}
         <tr id="{{player.id}}" class="table-methods">
-          {% if player.task1_name != null %}
-          <td data-column="1"><a href="{{ player.link }}">{{ player.task1_name }}</a></td>
-          <td data-column="1">{{ player.rouge_1_score }}</td>
-          <td data-column="1">{{ player.rouge_l_score }}</td>
-          <td data-column="1">{{ player.meteor_score }}</td>
-          {% else %}
-          <td data-column="1" ></td>
-          <td data-column="1" >0</td>
-          <td data-column="1" >0</td>
-          <td data-column="1" >0</td>
-          {% endif %}
-          {% if player.task2_name != null %}
-          <td data-column="2"><a href="{{ player.link }}">{{ player.task2_name }}</a></td>
-          <td data-column="2">{{ player.rouge_1_score }}</td>
-          <td data-column="2">{{ player.rouge_l_score }}</td>
-          <td data-column="2">{{ player.meteor_score }}</td>
-          {% else %}
-          <td data-column="2" ></td>
-          <td data-column="2" >0</td>
-          <td data-column="2" >0</td>
-          <td data-column="2" >0</td>
-          {% endif %}
-          {% if player.task3_name != null %}
-          <td data-column="3"><a href="{{ player.link }}">{{ player.task3_name }}</a></td>
-          <td data-column="3">{{ player.rouge_1_score }}</td>
-          <td data-column="3">{{ player.rouge_l_score }}</td>
-          <td data-column="3">{{ player.meteor_score }}</td>
-          
-          {% else %}
-          <td data-column="3" ></td>
-          <td data-column="3" >0</td>
-          <td data-column="3" >0</td>
-          <td data-column="3" >0</td>
-          
-          {% endif %}
-          {% if player.task4_name != null %}
-          <td data-column="4"><a href="{{ player.link }}">{{ player.task4_name }}</a></td>
-          <td data-column="4">{{ player.rouge_1_score }}</td>
-          <td data-column="4">{{ player.rouge_l_score }}</td>
-          <td data-column="4">{{ player.meteor_score }}</td>
-          {% else %}
-          <td data-column="4" ></td>
-          <td data-column="4" >0</td>
-          <td data-column="4" >0</td>
-          <td data-column="4" >0</td>
-          {% endif %}
+          <td><a href="{{ player.link }}">{{ player.name }}</a></td>
+          <td data-column="rouge">{{ player.rouge_1_score }}</td>
+          <td data-column="rouge">{{ player.rouge_l_score }}</td>
+          <td data-column="rouge">{{ player.meteor_score }}</td>
+          <td data-column="mae" style="display:none;">{{ player.mae }}</td>
+          <td data-column="mae" style="display:none;">{{ player.rmse }}</td>
         </tr>
       {% endfor %}
     </tbody>
@@ -83,17 +53,9 @@ permalink: leaderboard
 </div>
 <script>
     function sortTable(columnIndex, dec) {
-      console.log(columnIndex)
       const table = document.getElementById("leaderboard-table");
       const tbody = table.tBodies[0];
       const rows = Array.from(tbody.rows);
-
-      for (var i = 0; i < rows.length; i++) {
-        if (rows[i].cells[columnIndex].innerText == "0" || rows[i].cells[columnIndex].innerText == "10000") {
-          rows[i].style.display = "none";
-          console.log('here')
-        }
-      }
   
       const compareFunction = (rowA, rowB) => {
         const cellA = rowA.cells[columnIndex].innerText;
@@ -102,71 +64,32 @@ permalink: leaderboard
       };
   
       const sorted = rows.sort(compareFunction);
-      let isAscending = true;
-      for (let i = 1; i < sorted.length; i++) {
-        if (compareFunction(sorted[i - 1], sorted[i]) > 0) {
-          isAscending = false;
-          break;
-        }
-      }
-  
-      const sortedRows = isAscending ? sorted.reverse() : sorted;
-  
-      // Append sorted rows to the table
-      sortedRows.forEach(row => tbody.appendChild(row));
+      sorted.forEach(row => tbody.appendChild(row));
     }
+
     function changeColumn() {
-      const selectedColumn = document.getElementById("column-select").value;
-      const allCells = document.querySelectorAll("td[data-column]");
-      const allCellsth = document.querySelectorAll("th[data-column]");
+      const selectedTask = document.getElementById("column-select").value;
+      const rougeMetrics = document.querySelectorAll("[data-column='rouge']");
+      const maeMetrics = document.querySelectorAll("[data-column='mae']");
 
-      var rows = document.getElementsByClassName("table-methods");
-      for (var i = 0; i < rows.length; i++) {
-        rows[i].style.display = "table-row";
+      if (selectedTask >= 9) {
+        rougeMetrics.forEach(cell => cell.style.display = "none");
+        maeMetrics.forEach(cell => cell.style.display = "table-cell");
+      } else {
+        maeMetrics.forEach(cell => cell.style.display = "none");
+        rougeMetrics.forEach(cell => cell.style.display = "table-cell");
       }
 
-      if (selectedColumn == "1"){
-        sortTable(1, false)
-      } else if (selectedColumn == "2"){
-        sortTable(3, false)
-      } else if (selectedColumn == "3"){
-        sortTable(6, true)
-      } else if (selectedColumn == "4"){ 
-        sortTable(9, false)
-      }
-
-      allCellsth.forEach((cell) => {
-        if (cell.getAttribute("data-column") === selectedColumn) {
-          cell.style.display = "table-cell";
-        } else {
-          cell.style.display = "none";
-        }
-      });
-
-      allCells.forEach((cell) => {
-        if (cell.getAttribute("data-column") === selectedColumn) {
-          cell.style.display = "table-cell";
-        } else {
-          cell.style.display = "none";
-        }
-      });
+      sortTable(1, false);
     }
-    sortTable(1, false)
-  </script>
-  <style>
+
+    sortTable(1, false);
+</script>
+<style>
     td[data-column] {
-      display: none;
+      display: table-cell;
     }
-
     th[data-column] {
-      display: none;
-    }
-
-    th[data-column="1"] {
       display: table-cell;
     }
-
-    td[data-column="1"] {
-      display: table-cell;
-    }
-  </style>
+</style>
