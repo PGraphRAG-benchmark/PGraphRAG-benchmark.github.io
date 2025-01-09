@@ -1,6 +1,6 @@
 # Setup
-title:       Personalized Graph-Based Retrieval Benchmark for LLMs (PGraphRAG)
-tagline:      PGraphRAG
+title:        PGraphRAG
+tagline:      Personalized Graph-Based Retrieval Benchmark for LLMs
 baseurl:      ""
 paginate:     1
 locale:       "en"
